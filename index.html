@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Strawberry Surprise</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: #fff0f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #cake-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    #cake-button img {
+      width: 200px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    #cake-button img:hover {
+      transform: scale(1.05);
+    }
+
+    .letter {
+      display: none;
+      max-width: 500px;
+      background: #fff8dc;
+      padding: 20px;
+      border: 2px solid #ff69b4;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="cake-button" onclick="revealLetter()" title="Click the cake!">
+    <img src="https://cdn.pixabay.com/photo/2016/11/29/04/17/cake-1869227_960_720.jpg" alt="Strawberry Cake">
+  </button>
+
+  <div id="letter" class="letter">
+    <h2>Sweetest Wishes!</h2>
+    <p>
+      Inside this strawberry delight lies a message just for you. May your days be as sweet as frosting and your heart as full as this cake.
+    </p>
+    <p>
+      Keep smiling, and share the sweetness wherever you go.
+    </p>
+    <p>
+      — Your Secret Pastry Pal
+    </p>
+  </div>
+
+  <!-- Sound Effect -->
+  <audio id="cakeSound" preload="auto">
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_0d8b19f82d.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function revealLetter() {
+      const letter = document.getElementById("letter");
+      const sound = document.getElementById("cakeSound");
+      letter.style.display = "block";
+      sound.play();
+    }
+  </script>
+
+</body>
+</html>
