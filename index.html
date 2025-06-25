@@ -66,13 +66,18 @@
   </div>
 
   <!-- Sound Effect -->
-  <audio control autoplay loop>
+  <audio id="background-audio" loop>
     <source src="Zild - Huminga (Bahay-bahayan Sessions).mp3" type="audio/mp3">
   </audio>
+  
   <script>
     function revealLetter() {
       const letter = document.getElementById("letter");
       letter.style.display = "block";
+      
+      // Play the audio
+      const audio = document.getElementById("background-audio");
+      audio.play();
     }
   </script>
 </body>
